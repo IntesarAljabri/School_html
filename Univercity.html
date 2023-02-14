@@ -2,47 +2,32 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <style>
-
-.content {
-    padding: 30px;
-    margin: 0px auto;
-}
-.details {
-    margin-left: auto;
-    margin-right: auto;
-}
  
 body{
-    text-align: center;
+   text-align: center;
     background-color: rgb(212, 235, 245);
   }
-.button{
+#btn-primary{
     align-items:  right;
     align-content: top ;
 }
-img{
-
-    margin-left: top;
-    margin-top: left;
-    width: 10px;
-    height: 10px;
+h3{
+    text-align: center;
 }
 </style>
 </head>
 <body>
-    <div class="header">
-        <button type="button" class="btn btn-primary">
-            <a href="Main.html">HOME</a> 
-          </button> 
-         <img src="Geek1.jpg" >
-     <h3>Univercity</h3>
-
-   </div>
-   <body>
-    <div class="content">
-        <div class="details">
+    <table style="text-align:center ; width: 100%; height: 100%;">
+    <tr>
+   <td><img style=" width: 100px; height:100px ; align-items: top,left;"src="Geek1.jpg" id="my-image"> </td>
+    <td> <button  type="button" id="btn-primary">
+        <a href="Main.html">HOME</a> 
+      </button></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+     <h3 >Univercity</h3>
             <form border="1">
                 <fieldset>
             <table>
@@ -70,15 +55,15 @@ img{
                            </td>
                                <th><lable id="Website"></lable></th>
                     </tr>
+                </td>
             </table>
             </fieldset>
-        </div>
-    </div>
+            </body>
 </form>
-<button type="button" onclick="document.getElementById('Website').style.display='none'">Hide Website</button>
+<button type="button" style="align-items: center;" onclick="document.getElementById('Website').style.display='none'">Hide Website</button>
 
-<button type="button" onclick="document.getElementById('Website').style.display='block'">Show Website</button>
-<table id="DominList" border="1" style="width:100%; text-align: center; ">
+<button style="align-items: center;" type="button" onclick="document.getElementById('Website').style.display='block'">Show Website</button>
+<table id="DominList" border="1" style="width:100%; text-align:right; ">
         <tr>
             <td>
                 <lable>No</lable>
