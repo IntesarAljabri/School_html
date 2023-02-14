@@ -1,0 +1,124 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+
+.content {
+    padding: 30px;
+    margin: 0px auto;
+}
+.details {
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+body{
+    text-align: center;
+    background-color: rgb(212, 235, 245);
+  }
+.button{
+    align-items:  right;
+    align-content: top ;
+}
+img{
+
+    margin-left: top;
+    margin-top: left;
+    width: 10px;
+    height: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <button type="button" class="btn btn-primary">
+            <a href="Main.html">HOME</a> 
+          </button> 
+         <img src="Geek1.jpg" >
+     <h3>Univercity</h3>
+
+   </div>
+   <body>
+    <div class="content">
+        <div class="details">
+            <form border="1">
+                <fieldset>
+            <table>
+                    <tr>
+                     <td>
+                        <lable >University Name </lable>
+                    </td>
+                        <th><lable id="universityName"></lable></th>
+                    </tr>
+                    <tr>
+                        <td>
+                         <lable>Country</lable>
+                        </td>
+                            <th><lable id="Country"></lable></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>Country Code</lable>
+                           </td>
+                               <th><lable id="CountryCode"></lable></th>
+                          </tr>
+                       <tr>
+                        <td>
+                            <lable id="websites">Website</lable>
+                           </td>
+                               <th><lable id="Website"></lable></th>
+                    </tr>
+            </table>
+            </fieldset>
+        </div>
+    </div>
+</form>
+<button type="button" onclick="document.getElementById('Website').style.display='none'">Hide Website</button>
+
+<button type="button" onclick="document.getElementById('Website').style.display='block'">Show Website</button>
+<table id="DominList" border="1" style="width:100%; text-align: center; ">
+        <tr>
+            <td>
+                <lable>No</lable>
+            </td>
+             <th><lable id="No">Domain List</lable></th>
+        </tr>
+</table>
+<script>
+
+const api_url = "http://universities.hipolabs.com/search?country=United+States";
+async function getuniversity() {
+const response = await fetch(api_url);
+const data = await response.json();
+
+const university=data[Math.floor(Math.random() *30)];
+
+// getting access to the span container
+document.querySelector("#universityName").textContent =university.name;
+document.querySelector("#Country").textContent = university.country;
+document.querySelector("#CountryCode").textContent =university.alpha_two_code;
+document.querySelector("#Website").textContent =university.web_pages[0];
+
+for(i=0 ; i<100; i++){
+
+    let domain= data[i];
+    let table = document.querySelector("#DominList");
+    let row = table.insertRow();
+    let numberCell = row.insertCell(0);
+    let universityNameCell = row.insertCell(1);
+    No=i+1;
+    numberCell.innerHTML = No;
+    universityNameCell.textContent = domain.name;
+  }
+
+}
+
+// Calling the getUser() function
+getuniversity();
+
+</script>
+
+
+</html>
