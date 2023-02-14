@@ -93,7 +93,7 @@ async function getuniversity() {
 const response = await fetch(api_url);
 const data = await response.json();
 
-const university=data[Math.floor(Math.random() *30)];
+const university=data[Math.floor(Math.random() *30)]; //used to repeat 30 times
 
 // getting access to the span container
 document.querySelector("#universityName").textContent =university.name;
@@ -111,6 +111,7 @@ for(i=0 ; i<100; i++){
     No=i+1;
     numberCell.innerHTML = No;
     universityNameCell.textContent = domain.name;
+
   }
 
 }
